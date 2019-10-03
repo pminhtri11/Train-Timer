@@ -27,13 +27,13 @@ $("#add-train").on("click", function () {
     var tname = $("#name-input").val();
     var tdestination = $("#destination-input").val();
     var tfrequency = $("#frequency-input").val();
-
-
     var firstTime = $("#time-input").val();
-    var firstConverted = moment(firstTime, "HH:mm A").subtract(1, "years");
+
+    //converted time to a variable we can use
+    var firstConverted = moment(firstTime, "HH:mm").subtract(1, "years");
 
     // Difference between the times
-    var diffTime = moment().diff(moment(firstConverted), "minutes");
+    var diffTime = moment().diff(firstConverted, "minutes");
     console.log(diffTime);
 
     //Time Apart
